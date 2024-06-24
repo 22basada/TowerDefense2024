@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://rvtt3seftrj2"]
+
+[ext_resource type="Texture2D" uid="uid://c4snogs3stlfy" path="res://Sprites/stone texture placeholder.png" id="1_v23n7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mus33"]
+
+[node name="stone" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 4.76837e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_v23n7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mus33")
