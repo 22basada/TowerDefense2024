@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7lhjn2teusmf"
-path="res://.godot/imported/path texture placeholder.png-cb13e4b2bca3ea5b2b8626548a72840f.ctex"
+uid="uid://daupgcn3pskv"
+path="res://.godot/imported/tilemap placeholder 2.png-a8a4b6b9f1183c80265f7a79d40ab80b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/path texture placeholder.png"
-dest_files=["res://.godot/imported/path texture placeholder.png-cb13e4b2bca3ea5b2b8626548a72840f.ctex"]
+source_file="res://Sprites/tilemap placeholder 2.png"
+dest_files=["res://.godot/imported/tilemap placeholder 2.png-a8a4b6b9f1183c80265f7a79d40ab80b.ctex"]
 
 [params]
 
