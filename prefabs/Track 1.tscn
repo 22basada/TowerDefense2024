@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddnsjgbw0d2lv"]
+
+[ext_resource type="PackedScene" uid="uid://crhloqnyse0e3" path="res://prefabs/stone.tscn" id="1_afnkf"]
+
+[sub_resource type="Curve2D" id="Curve2D_a0pb3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 411, -36, 0, 0, 0, 0, 413, 159, 0, 0, 0, 0, 159, 159, 0, 0, 0, 0, 159, 290, 0, 0, 0, 0, 349, 287, 0, 0, 0, 0, 349, 605, 0, 0, 0, 0, 160, 606, 0, 0, 0, 0, 156, 416, 0, 0, 0, 0, 800, 415, 0, 0, 0, 0, 799, 351, 0, 0, 0, 0, 863, 353, 0, 0, 0, 0, 862, 158, 0, 0, 0, 0, 606, 157, 0, 0, 0, 0, 610, 606, 0, 0, 0, 0, 990, 606, 0, 0, 0, 0, 991, 480, 0, 0, 0, 0, 1056, 481, 0, 0, 0, 0, 1055, 290, 0, 0, 0, 0, 1207, 290)
+}
+point_count = 19
+
+[node name="Track 1" type="Path2D"]
+curve = SubResource("Curve2D_a0pb3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(411, -36)
+rotation = -0.000194479
+rotates = false
+loop = false
+
+[node name="stone" parent="PathFollow2D" instance=ExtResource("1_afnkf")]
