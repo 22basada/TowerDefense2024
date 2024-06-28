@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dj8fkbvhd1o2t"]
+[gd_scene load_steps=8 format=3 uid="uid://dj8fkbvhd1o2t"]
 
 [ext_resource type="Texture2D" uid="uid://daupgcn3pskv" path="res://Sprites/tilemap placeholder 2.png" id="1_bow14"]
 [ext_resource type="Texture2D" uid="uid://1w33xe8jlp4b" path="res://Sprites/tilemap 3.png" id="1_n7oyk"]
 [ext_resource type="Script" path="res://scripts/PathSpawner.gd" id="3_6uqr7"]
+[ext_resource type="Script" path="res://scripts/FPS_counter.gd" id="4_3vlwk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwwsh"]
 texture = ExtResource("1_n7oyk")
@@ -80,5 +81,12 @@ script = ExtResource("3_6uqr7")
 [node name="Timer" type="Timer" parent="PathSpawner"]
 wait_time = 1.75
 autostart = true
+
+[node name="FPS_counter" type="Label" parent="."]
+texture_filter = 1
+offset_left = 10.0
+offset_right = 41.0
+offset_bottom = 23.0
+script = ExtResource("4_3vlwk")
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
