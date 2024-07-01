@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlv5lnth7rt1r"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_i1pr0"]
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i1pr0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 66.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Unpause" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Close Game" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Unpause" to="." method="_on_unpause_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Close Game" to="." method="_on_close_game_pressed"]
