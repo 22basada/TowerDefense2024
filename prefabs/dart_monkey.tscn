@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://jvkakcj0s4s1"]
+[gd_scene load_steps=5 format=3 uid="uid://jvkakcj0s4s1"]
 
-[ext_resource type="Texture2D" uid="uid://j6f7l3vp5wgm" path="res://drill robot.png" id="1_23q3m"]
+[ext_resource type="Texture2D" uid="uid://j6f7l3vp5wgm" path="res://Sprites/drill robot.png" id="1_a4u7p"]
+[ext_resource type="Script" path="res://Scripts/dart_monkey.gd" id="1_vfsm2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qfl1"]
 size = Vector2(47, 43)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nxe1i"]
-radius = 200.0
+radius = 300.0
 
 [node name="DartMonkey" type="StaticBody2D"]
+script = ExtResource("1_vfsm2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)
@@ -16,10 +18,10 @@ shape = SubResource("RectangleShape2D_1qfl1")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
-[node name="DartMonkey" type="Sprite2D" parent="."]
+[node name="DartMonkeySprite" type="Sprite2D" parent="."]
 position = Vector2(-0.499999, 0.5)
 scale = Vector2(0.239796, 0.25)
-texture = ExtResource("1_23q3m")
+texture = ExtResource("1_a4u7p")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(24, 0)
