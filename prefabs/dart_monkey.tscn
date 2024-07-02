@@ -7,7 +7,7 @@
 size = Vector2(47, 43)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nxe1i"]
-radius = 300.0
+radius = 150.0
 
 [node name="DartMonkey" type="StaticBody2D"]
 script = ExtResource("1_vfsm2")
@@ -23,12 +23,15 @@ position = Vector2(-0.499999, 0.5)
 scale = Vector2(0.239796, 0.25)
 texture = ExtResource("1_a4u7p")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DartMonkeyArea" type="Area2D" parent="."]
 position = Vector2(24, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DartMonkeyArea"]
 position = Vector2(-24, 0)
 rotation = 1.5708
 shape = SubResource("CircleShape2D_nxe1i")
 
 [node name="Node" type="Node" parent="."]
+
+[connection signal="body_entered" from="DartMonkeyArea" to="." method="_on_dart_monkey_area_body_entered"]
+[connection signal="body_exited" from="DartMonkeyArea" to="." method="_on_dart_monkey_area_body_exited"]

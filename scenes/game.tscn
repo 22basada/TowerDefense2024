@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dj8fkbvhd1o2t"]
+[gd_scene load_steps=11 format=3 uid="uid://dj8fkbvhd1o2t"]
 
 [ext_resource type="Texture2D" uid="uid://daupgcn3pskv" path="res://Sprites/tilemap placeholder 2.png" id="1_bow14"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_l1ndr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/PathSpawner.gd" id="3_6uqr7"]
 [ext_resource type="Script" path="res://scripts/FPS_counter.gd" id="4_3vlwk"]
 [ext_resource type="PackedScene" uid="uid://dlv5lnth7rt1r" path="res://scenes/pause_menu.tscn" id="5_qhskp"]
+[ext_resource type="PackedScene" uid="uid://jvkakcj0s4s1" path="res://prefabs/dart_monkey.tscn" id="7_ofije"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwwsh"]
 texture = ExtResource("1_n7oyk")
@@ -101,5 +102,10 @@ offset_top = 202.0
 offset_right = 368.0
 offset_bottom = 202.0
 scale = Vector2(6.12, 4.6)
+
+[node name="AllTowers" type="Node2D" parent="."]
+
+[node name="DartMonkey" parent="AllTowers" instance=ExtResource("7_ofije")]
+position = Vector2(227, 221)
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]

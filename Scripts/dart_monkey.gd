@@ -1,11 +1,32 @@
 extends StaticBody2D
 
+var dart = preload("res://prefabs/dart 1.tscn")
+var dart_damage = 1 
+var pathName 
+var currentTargets = []
+var current
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
+
+func _on_dart_monkey_area_body_entered(body):
+	if "stone" in body.name:
+		var tempArray = []
+		currentTargets = get_node("DartMonkeyArea").get_overlapping_bodies()
+		print(currentTargets)
+		
+		for i in currentTargets:
+			if "stone" in i.name:
+				tempArray.append(i)
+		var currentTargets = null
+		
+		
+		
+		pathName = currentTargets.get_parent().name
+		
+		var tempDart = dart.instantiate()
+		tempDart.pathName = pathName
+		tempDart.dart_damage = dart_damage
+		get_node("").add_child(tempDart)
+		tempDart.global_position = $Aim.global_position
+
+func _on_dart_monkey_area_body_exited(body):
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
