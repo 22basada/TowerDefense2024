@@ -18,15 +18,22 @@ func _on_dart_monkey_area_body_entered(body):
 				tempArray.append(i)
 		var currentTargets = null
 		
+		for i in tempArray:
+			if currentTargets == null:
+				currentTargets = i.get_node("../")
+			else:
+				if i.get_parent().get_progress() > currentTargets.get_progress():
+					currentTargets = i.get_node("../")
 		
-		
+		current = currentTargets
 		pathName = currentTargets.get_parent().name
 		
 		var tempDart = dart.instantiate()
 		tempDart.pathName = pathName
 		tempDart.dart_damage = dart_damage
-		get_node("").add_child(tempDart)
+		get_node("DartContainer").add_child(tempDart)
 		tempDart.global_position = $Aim.global_position
+
 
 func _on_dart_monkey_area_body_exited(body):
 	pass # Replace with function body.
