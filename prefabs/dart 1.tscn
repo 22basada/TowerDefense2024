@@ -12,6 +12,7 @@ radius = 26.0
 height = 74.0
 
 [node name="Dart1" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_1860t")
 
 [node name="WeaponMachine" type="Sprite2D" parent="."]
@@ -27,4 +28,7 @@ shape = SubResource("CapsuleShape2D_gsmom")
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.987185, 1)
 shape = SubResource("CapsuleShape2D_4g2hy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

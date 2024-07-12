@@ -7,16 +7,16 @@
 size = Vector2(47, 43)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nxe1i"]
-radius = 150.0
+radius = 200.0
 
 [node name="DartMonkey" type="StaticBody2D"]
 script = ExtResource("1_vfsm2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_1qfl1")
 
 [node name="Aim" type="Marker2D" parent="."]
+position = Vector2(24, 0)
 
 [node name="DartMonkeySprite" type="Sprite2D" parent="."]
 position = Vector2(-0.499999, 0.5)

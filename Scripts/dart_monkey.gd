@@ -1,11 +1,17 @@
 extends StaticBody2D
 
 var dart = preload("res://prefabs/dart 1.tscn")
-var dart_damage = 1 
+var dart_damage = 1
 var pathName 
 var currentTargets = []
 var current
 
+func _process(delta):
+	if is_instance_valid(current):
+		self.look_at(current.global_position)
+	else:
+		for i in get_node("DartContainer").get_child_count():
+			get_node("DartContainer").get_child(i).queue_free()
 
 func _on_dart_monkey_area_body_entered(body):
 	if "stone" in body.name:
@@ -36,4 +42,4 @@ func _on_dart_monkey_area_body_entered(body):
 
 
 func _on_dart_monkey_area_body_exited(body):
-	pass # Replace with function body.
+	currentTargets = get_node("DartMonkeyArea").get_overlapping_bodies()
