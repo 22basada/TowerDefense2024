@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://d37rf22ptp0ek"]
+
+[ext_resource type="PackedScene" uid="uid://5rinlf6dmo3y" path="res://prefabs/buy_basic_tower.tscn" id="1_1l6u3"]
+
+[node name="Shop" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 896.0
+offset_right = 1152.0
+offset_bottom = 704.0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 232.0
+offset_bottom = 680.0
+scale = Vector2(1.00424, 1)
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+
+[node name="BuyBasicTower" parent="Panel/FlowContainer" instance=ExtResource("1_1l6u3")]
+layout_mode = 2

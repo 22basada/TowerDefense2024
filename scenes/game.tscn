@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/PathSpawner.gd" id="3_6uqr7"]
 [ext_resource type="Script" path="res://scripts/FPS_counter.gd" id="4_3vlwk"]
 [ext_resource type="PackedScene" uid="uid://dlv5lnth7rt1r" path="res://scenes/pause_menu.tscn" id="5_qhskp"]
-[ext_resource type="PackedScene" uid="uid://jvkakcj0s4s1" path="res://prefabs/dart_monkey.tscn" id="7_ofije"]
+[ext_resource type="PackedScene" uid="uid://d37rf22ptp0ek" path="res://prefabs/shop.tscn" id="8_16rdg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwwsh"]
 texture = ExtResource("1_n7oyk")
@@ -97,6 +97,7 @@ script = ExtResource("4_3vlwk")
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("5_qhskp")]
 visible = false
+texture_filter = 1
 offset_left = 368.0
 offset_top = 202.0
 offset_right = 368.0
@@ -105,7 +106,6 @@ scale = Vector2(6.12, 4.6)
 
 [node name="AllTowers" type="Node2D" parent="."]
 
-[node name="DartMonkey" parent="AllTowers" instance=ExtResource("7_ofije")]
-position = Vector2(227, 221)
+[node name="Shop" parent="." instance=ExtResource("8_16rdg")]
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]

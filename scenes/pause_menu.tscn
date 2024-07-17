@@ -20,6 +20,7 @@ offset_bottom = 66.0
 layout_mode = 2
 
 [node name="Unpause" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 text = "Resume"
 
