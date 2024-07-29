@@ -23,6 +23,7 @@ CustomCursor="*res://scripts/custom_cursor.gd"
 
 window/size/viewport_height=704
 window/size/resizable=false
+window/size/borderless=true
 
 [input]
 
