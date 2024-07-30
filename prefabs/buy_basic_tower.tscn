@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://5rinlf6dmo3y"]
 
-[ext_resource type="Script" path="res://prefabs/buy_basic_tower.gd" id="1_sy85m"]
+[ext_resource type="Script" path="res://Scripts/buy_basic_tower.gd" id="1_sy85m"]
 [ext_resource type="Texture2D" uid="uid://j6f7l3vp5wgm" path="res://Sprites/drill robot.png" id="2_xrnch"]
 
 [node name="BuyBasicTower" type="Panel"]

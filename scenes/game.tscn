@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dj8fkbvhd1o2t"]
+[gd_scene load_steps=11 format=3 uid="uid://dj8fkbvhd1o2t"]
 
 [ext_resource type="Texture2D" uid="uid://daupgcn3pskv" path="res://Sprites/tilemap placeholder 2.png" id="1_bow14"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_l1ndr"]
 [ext_resource type="Texture2D" uid="uid://1w33xe8jlp4b" path="res://Sprites/tilemap 3.png" id="1_n7oyk"]
 [ext_resource type="Script" path="res://scripts/PathSpawner.gd" id="3_6uqr7"]
 [ext_resource type="Script" path="res://scripts/FPS_counter.gd" id="4_3vlwk"]
+[ext_resource type="Script" path="res://Scripts/shop.gd" id="7_iddaj"]
 [ext_resource type="PackedScene" uid="uid://d37rf22ptp0ek" path="res://prefabs/shop.tscn" id="8_16rdg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwwsh"]
@@ -95,5 +96,6 @@ script = ExtResource("4_3vlwk")
 [node name="AllTowers" type="Node2D" parent="."]
 
 [node name="Shop" parent="." instance=ExtResource("8_16rdg")]
+script = ExtResource("7_iddaj")
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
