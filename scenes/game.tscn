@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dj8fkbvhd1o2t"]
+[gd_scene load_steps=12 format=3 uid="uid://dj8fkbvhd1o2t"]
 
 [ext_resource type="Texture2D" uid="uid://daupgcn3pskv" path="res://Sprites/tilemap placeholder 2.png" id="1_bow14"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_l1ndr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/PathSpawner.gd" id="3_6uqr7"]
 [ext_resource type="Script" path="res://scripts/FPS_counter.gd" id="4_3vlwk"]
 [ext_resource type="Script" path="res://Scripts/shop.gd" id="7_iddaj"]
+[ext_resource type="Script" path="res://Scripts/game_time.gd" id="8_5uqsw"]
 [ext_resource type="PackedScene" uid="uid://d37rf22ptp0ek" path="res://prefabs/shop.tscn" id="8_16rdg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwwsh"]
@@ -92,10 +93,42 @@ offset_left = 10.0
 offset_right = 41.0
 offset_bottom = 23.0
 script = ExtResource("4_3vlwk")
+metadata/_edit_use_anchors_ = true
 
 [node name="AllTowers" type="Node2D" parent="."]
 
 [node name="Shop" parent="." instance=ExtResource("8_16rdg")]
 script = ExtResource("7_iddaj")
+
+[node name="GameTimeUI" type="Panel" parent="."]
+offset_left = 109.0
+offset_top = 20.0
+offset_right = 173.0
+offset_bottom = 45.0
+scale = Vector2(2, 2)
+script = ExtResource("8_5uqsw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Minutes" type="Label" parent="GameTimeUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Seconds" type="Label" parent="GameTimeUI"]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 65.0
+offset_bottom = 26.0
+text = "00
+"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="RoundUI" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
