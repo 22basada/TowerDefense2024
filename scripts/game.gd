@@ -2,13 +2,16 @@ extends Node2D
 
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
 var paused = false 
-
+var openmouse = load("res://Sprites/kenney_cursor-pack/Vector/Basic/hand_open.svg")
+var closedmouse = load("res://Sprites/kenney_cursor-pack/Vector/Basic/hand_closed.svg")
 #var TimeBetweenRounds = 5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("pausemenu"):
-		pauseMenu()
+	if InputEventMouseButton:
+		Input.set_custom_mouse_cursor(closedmouse)
+#	if Input.is_action_just_pressed("pausemenu"):
+#		pauseMenu()
 	
 func pauseMenu():
 	paused = !paused

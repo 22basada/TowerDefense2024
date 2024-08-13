@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dj8fkbvhd1o2t"]
+[gd_scene load_steps=17 format=3 uid="uid://dj8fkbvhd1o2t"]
 
 [ext_resource type="Texture2D" uid="uid://daupgcn3pskv" path="res://Sprites/tilemap placeholder 2.png" id="1_bow14"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_l1ndr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/shop.gd" id="7_iddaj"]
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="8_5uqsw"]
 [ext_resource type="PackedScene" uid="uid://d37rf22ptp0ek" path="res://prefabs/shop.tscn" id="8_16rdg"]
+[ext_resource type="FontFile" uid="uid://crxrcv03kdx5g" path="res://Tenada.ttf" id="9_iq03t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwwsh"]
 texture = ExtResource("1_n7oyk")
@@ -72,6 +73,22 @@ tile_size = Vector2i(64, 64)
 sources/2 = SubResource("TileSetAtlasSource_txxv4")
 sources/0 = SubResource("TileSetAtlasSource_hwwsh")
 
+[sub_resource type="LabelSettings" id="LabelSettings_vbyey"]
+font = ExtResource("9_iq03t")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh0jh"]
+bg_color = Color(0.0392157, 0.0392157, 0.0392157, 0.666667)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3dhu"]
+font = ExtResource("9_iq03t")
+
+[sub_resource type="LabelSettings" id="LabelSettings_skujh"]
+font = ExtResource("9_iq03t")
+
 [node name="game" type="Node2D"]
 script = ExtResource("1_l1ndr")
 
@@ -89,9 +106,11 @@ autostart = true
 
 [node name="FPS_counter" type="Label" parent="."]
 texture_filter = 1
-offset_left = 10.0
-offset_right = 41.0
-offset_bottom = 23.0
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 45.0
+offset_bottom = 33.0
+label_settings = SubResource("LabelSettings_vbyey")
 script = ExtResource("4_3vlwk")
 metadata/_edit_use_anchors_ = true
 
@@ -102,33 +121,51 @@ script = ExtResource("7_iddaj")
 
 [node name="GameTimeUI" type="Panel" parent="."]
 offset_left = 109.0
-offset_top = 20.0
+offset_top = 24.0
 offset_right = 173.0
-offset_bottom = 45.0
+offset_bottom = 49.0
 scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_uh0jh")
 script = ExtResource("8_5uqsw")
 metadata/_edit_use_anchors_ = true
 
 [node name="Minutes" type="Label" parent="GameTimeUI"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_bottom = 0.2
 offset_right = 40.0
 offset_bottom = 23.0
 text = "00:"
+label_settings = SubResource("LabelSettings_c3dhu")
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Seconds" type="Label" parent="GameTimeUI"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0078125
+anchor_top = 0.2
+anchor_right = -0.0078125
+anchor_bottom = 0.2
 offset_left = 25.0
 offset_right = 65.0
 offset_bottom = 26.0
 text = "00
 "
+label_settings = SubResource("LabelSettings_skujh")
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="RoundUI" type="Panel" parent="."]
+visible = false
+offset_left = 56.0
+offset_top = 28.0
+offset_right = 96.0
+offset_bottom = 68.0
+
+[node name="RoundCount" type="Label" parent="RoundUI"]
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 23.0
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
