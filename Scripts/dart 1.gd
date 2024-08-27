@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var target
-var speed = 400
+var speed = 440
 var pathName = ""
 var dart_damage
 

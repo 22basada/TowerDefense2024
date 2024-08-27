@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 130
+@export var speed = 150
 
-var health = 1
+var health = 2
 var playerhealth = 100
 var time: float = 0.0
 var seconds: int = 0

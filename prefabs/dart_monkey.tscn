@@ -7,7 +7,7 @@
 size = Vector2(47, 43)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nxe1i"]
-radius = 200.0
+radius = 120.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mi2r"]
 bg_color = Color(0.0784314, 0.313726, 0.313726, 0.313726)
@@ -46,6 +46,7 @@ offset_top = -200.0
 offset_right = 200.0
 offset_bottom = 200.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7mi2r")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="DartMonkeyArea" to="." method="_on_dart_monkey_area_body_entered"]
 [connection signal="body_exited" from="DartMonkeyArea" to="." method="_on_dart_monkey_area_body_exited"]
