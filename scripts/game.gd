@@ -11,7 +11,7 @@ func _ready():
 #var TimeBetweenRounds = 5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta): #all of this is for making the mouse change when m1 is up or down
 	if Input.is_action_pressed("leftclick") != mousedown:
 		if (Input.is_action_pressed("leftclick")):
 			Input.set_custom_mouse_cursor(closedmouse)
@@ -24,7 +24,7 @@ func _process(delta):
 		
 #	if Input.is_action_just_pressed("pausemenu"):
 #		pauseMenu()
-func pauseMenu():
+func pauseMenu(): #pause menu - broken
 	paused = !paused
 	if paused:
 		pause_menu.hide()
@@ -34,7 +34,7 @@ func pauseMenu():
 		Engine.time_scale = 0
 	
 
-#func _ready():
+#func _ready(): # i was originally going to have round system but removed it
 #	Game()
 #
 #func Game():

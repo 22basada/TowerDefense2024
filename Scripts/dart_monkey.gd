@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 var dart = preload("res://prefabs/dart 1.tscn")
-var dart_damage = 1
+var dart_damage = 1 #how much damage the darts do to the enemies
 var pathName 
 var currentTargets = []
 var current
@@ -17,7 +17,7 @@ func _on_dart_monkey_area_body_entered(body):
 	if "stone" in body.name:
 		var tempArray = []
 		currentTargets = get_node("DartMonkeyArea").get_overlapping_bodies()
-		print(currentTargets)
+		print(currentTargets) #this checks which enemy is in range
 		
 		for i in currentTargets:
 			if "stone" in i.name:

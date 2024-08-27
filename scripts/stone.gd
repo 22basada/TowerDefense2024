@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 @export var speed = 150
 
-var health = 2
+var health = 2 #change this for changing enemy health
 var playerhealth = 100
-var time: float = 0.0
+var time: float = 0.0 #this was going to be for changing speed of enemies
 var seconds: int = 0
 
 func _process(delta):
@@ -15,5 +15,5 @@ func _process(delta):
 		playerhealth -=1
 		
 	if health <= 0:
-		get_parent().get_parent().queue_free()
+		get_parent().get_parent().queue_free() #gets rid of enemy when health is zero
 

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var target
-var speed = 440
+var speed = 500 #change this for speed
 var pathName = ""
 var dart_damage
 
@@ -22,5 +22,5 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if "stone" in body.name:
-		body.health -=dart_damage
-		queue_free()
+		body.health -=dart_damage #dart damages enemy when in contact then disappears
+		queue_free() 
