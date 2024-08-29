@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var target
-var speed = 500 #change this for speed
+var speed = 500 #change this for speed of enemies
 var pathName = ""
 var dart_damage
 
@@ -13,11 +13,11 @@ func _physics_process(delta):
 		if pathSpawnerNode.get_child(i).name == pathName:
 			target = pathSpawnerNode.get_child(i).get_child(0).get_child(0).global_position
 	
-	velocity = global_position.direction_to(target)* speed
+	velocity = global_position.direction_to(target)* speed #velocity is speed and direction
 	
-	look_at(target)
+	look_at(target) #when dart is going to enemy it is in the right orientation
 	
-	move_and_slide()
+	move_and_slide() #makes the dart go to enemy 
 
 
 func _on_area_2d_body_entered(body):
