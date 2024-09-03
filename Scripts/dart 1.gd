@@ -5,7 +5,9 @@ var target
 var speed = 500 #change this for speed of enemies
 var pathName = ""
 var dart_damage
-
+var impactsoundeffect : AudioStreamPlayer
+func _ready() -> void:
+	impactsoundeffect = get_node("/root/game/impactsoundeffect")
 func _physics_process(delta):
 	var pathSpawnerNode = get_tree().get_root().get_node("game/PathSpawner")
 	
@@ -23,4 +25,5 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if "stone" in body.name:
 		body.health -=dart_damage #dart damages enemy when in contact then disappears
+		impactsoundeffect.play()
 		queue_free() 

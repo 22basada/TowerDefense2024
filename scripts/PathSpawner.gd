@@ -10,6 +10,6 @@ func _on_timer_timeout():
 	if game and game.has_method("current_speed"):
 		var speed = game.current_speed
 		for child in temp_path.get_children():
-			if child.is_in_group("AllTowers"):
+			if child.is_in_group("enemies"):
 				child.set_speed(speed)
 	game.update_all_stones_speed()

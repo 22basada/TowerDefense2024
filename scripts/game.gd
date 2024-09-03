@@ -34,7 +34,7 @@ func _process(delta): #all of this is for making the mouse change when m1 is up 
 		update_all_stones_speed()
 	
 func update_all_stones_speed():
-	for stone in get_tree().get_nodes_in_group("AllTowers"):
+	for stone in get_tree().get_nodes_in_group("enemies"):
 		if stone.has_method("set_speed"):
 			stone.set_speed(current_speed)
 			print("Stone speed changed to: ", current_speed)

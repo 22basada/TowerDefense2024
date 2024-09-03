@@ -3,9 +3,10 @@ extends Panel
 @onready var tower = preload("res://prefabs/dart_monkey.tscn")
 var currentTile
 var money_ui : Label
+var moneysoundeffect : AudioStreamPlayer
 func _ready() -> void:
 	money_ui = get_node("/root/game/MoneyUI/MoneyCounter")
-	
+	moneysoundeffect = get_node("/root/game/moneysoundeffect")
 	
 func _on_gui_input(event):
 	var tempTower = tower.instantiate()
@@ -33,6 +34,7 @@ func _on_gui_input(event):
 			tempTower.global_position = event.global_position
 			if money_ui:
 				money_ui._on_tower_placed()
+				moneysoundeffect.play()
 			tempTower.get_node("Area").hide() #i was going to add it so when tower is being dragged, you can see its range
 	else:
 		if get_child_count() > 1:

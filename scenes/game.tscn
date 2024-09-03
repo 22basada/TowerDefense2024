@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dj8fkbvhd1o2t"]
+[gd_scene load_steps=22 format=3 uid="uid://dj8fkbvhd1o2t"]
 
 [ext_resource type="Texture2D" uid="uid://daupgcn3pskv" path="res://Sprites/tilemap placeholder 2.png" id="1_bow14"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_l1ndr"]
@@ -11,6 +11,9 @@
 [ext_resource type="FontFile" uid="uid://crxrcv03kdx5g" path="res://Tenada.ttf" id="9_iq03t"]
 [ext_resource type="Script" path="res://scripts/HealthCounter.gd" id="10_f5bss"]
 [ext_resource type="Script" path="res://Scripts/MoneyCounter.gd" id="11_epk8b"]
+[ext_resource type="AudioStream" uid="uid://kid4st6m6sio" path="res://Audio/footstep_concrete_002.ogg" id="12_hqc3p"]
+[ext_resource type="AudioStream" uid="uid://8ta04qcty7su" path="res://Audio/cashier-quotka-chingquot-sound-effect-129698-[AudioTrimmer.com].mp3" id="13_wo7ax"]
+[ext_resource type="AudioStream" uid="uid://ctp8wdymgohm2" path="res://Audio/footstep_concrete_001.ogg" id="14_px85t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwwsh"]
 texture = ExtResource("1_n7oyk")
@@ -213,5 +216,16 @@ offset_bottom = 68.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="breaksoundeffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_hqc3p")
+
+[node name="moneysoundeffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_wo7ax")
+volume_db = -10.0
+
+[node name="impactsoundeffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_px85t")
+volume_db = -5.0
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
