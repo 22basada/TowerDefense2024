@@ -1,6 +1,6 @@
 extends Label
 
-var player_health = 50
+var player_health = 200
 var health = "HEALTH: "
 func _ready():
 	health_display_update()
