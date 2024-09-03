@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dj8fkbvhd1o2t"]
+[gd_scene load_steps=19 format=3 uid="uid://dj8fkbvhd1o2t"]
 
 [ext_resource type="Texture2D" uid="uid://daupgcn3pskv" path="res://Sprites/tilemap placeholder 2.png" id="1_bow14"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_l1ndr"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d37rf22ptp0ek" path="res://prefabs/shop.tscn" id="8_16rdg"]
 [ext_resource type="FontFile" uid="uid://crxrcv03kdx5g" path="res://Tenada.ttf" id="9_iq03t"]
 [ext_resource type="Script" path="res://scripts/HealthCounter.gd" id="10_f5bss"]
+[ext_resource type="Script" path="res://Scripts/MoneyCounter.gd" id="11_epk8b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwwsh"]
 texture = ExtResource("1_n7oyk")
@@ -177,6 +178,28 @@ scale = Vector2(0.620957, 0.800133)
 label_settings = SubResource("LabelSettings_c3dhu")
 horizontal_alignment = 2
 script = ExtResource("10_f5bss")
+metadata/_edit_use_anchors_ = true
+
+[node name="MoneyUI" type="Panel" parent="."]
+offset_left = 620.0
+offset_top = 42.0
+offset_right = 684.0
+offset_bottom = 67.0
+scale = Vector2(2.88, 2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_uh0jh")
+metadata/_edit_use_anchors_ = true
+
+[node name="MoneyCounter" type="Label" parent="MoneyUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.26
+anchor_bottom = 0.26
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.620957, 0.800133)
+label_settings = SubResource("LabelSettings_c3dhu")
+horizontal_alignment = 2
+script = ExtResource("11_epk8b")
 metadata/_edit_use_anchors_ = true
 
 [node name="RoundUI" type="Panel" parent="."]

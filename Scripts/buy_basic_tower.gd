@@ -2,7 +2,11 @@ extends Panel
 
 @onready var tower = preload("res://prefabs/dart_monkey.tscn")
 var currentTile
-
+var money_ui : Label
+func _ready() -> void:
+	money_ui = get_node("/root/game/MoneyUI/MoneyCounter")
+	
+	
 func _on_gui_input(event):
 	var tempTower = tower.instantiate()
 	if event is InputEventMouseButton and event.button_mask == 1:
@@ -27,6 +31,8 @@ func _on_gui_input(event):
 			
 			path.add_child(tempTower)
 			tempTower.global_position = event.global_position
+			if money_ui:
+				money_ui._on_tower_placed()
 			tempTower.get_node("Area").hide() #i was going to add it so when tower is being dragged, you can see its range
 	else:
 		if get_child_count() > 1:
