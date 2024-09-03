@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 150 
 #this means that the further along the stones are, the faster they get
-var health = 2 #change this for changing enemy health
+var health = 3 #change this for changing enemy health
 var health_ui : Label
 var money_ui : Label
 var breaksoundeffect : AudioStreamPlayer
@@ -30,4 +30,3 @@ func _process(delta):
 		
 func set_speed(new_speed):
 	speed = new_speed
-	print("Stone speed updated to: ", speed)

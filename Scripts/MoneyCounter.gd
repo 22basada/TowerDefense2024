@@ -3,7 +3,7 @@ extends Label
 var cash = 650
 var dollarsign = "$ "
 var freemoney = 100
-var freemoneytime = 25
+var freemoneytime = 15
 var time = 0.0
 func _ready():
 	cash_display_update()

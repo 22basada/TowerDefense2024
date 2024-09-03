@@ -106,6 +106,7 @@ layer_0/tile_data = PackedInt32Array(17, 196608, 4, 16, 262144, 1, 15, 262144, 1
 script = ExtResource("3_6uqr7")
 
 [node name="Timer" type="Timer" parent="PathSpawner"]
+wait_time = 0.75
 autostart = true
 
 [node name="FPS_counter" type="Label" parent="."]

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var target
-var speed = 500 #change this for speed of enemies
+var speed = 350
 var pathName = ""
 var dart_damage
 var impactsoundeffect : AudioStreamPlayer
