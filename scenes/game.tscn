@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dj8fkbvhd1o2t"]
+[gd_scene load_steps=23 format=3 uid="uid://dj8fkbvhd1o2t"]
 
 [ext_resource type="Texture2D" uid="uid://daupgcn3pskv" path="res://Sprites/tilemap placeholder 2.png" id="1_bow14"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_l1ndr"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://kid4st6m6sio" path="res://Audio/footstep_concrete_002.ogg" id="12_hqc3p"]
 [ext_resource type="AudioStream" uid="uid://8ta04qcty7su" path="res://Audio/cashier-quotka-chingquot-sound-effect-129698-[AudioTrimmer.com].mp3" id="13_wo7ax"]
 [ext_resource type="AudioStream" uid="uid://ctp8wdymgohm2" path="res://Audio/footstep_concrete_001.ogg" id="14_px85t"]
+[ext_resource type="AudioStream" uid="uid://0b7e60d8mxh3" path="res://Audio/groovy-ambient-funk-201745.mp3" id="15_h5e00"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwwsh"]
 texture = ExtResource("1_n7oyk")
@@ -228,5 +229,9 @@ volume_db = -10.0
 [node name="impactsoundeffect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_px85t")
 volume_db = -5.0
+
+[node name="ambient_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_h5e00")
+volume_db = -15.0
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]

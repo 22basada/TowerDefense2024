@@ -11,8 +11,13 @@ var speed_change_interval = 3 # 3
 var speed_increase = 12 # 12
 var initial_speed = 150 # 150
 var current_speed = initial_speed
+var ambientmusic : AudioStreamPlayer
+
+
 func _ready():
 	Input.set_custom_mouse_cursor(openmouse)
+	ambientmusic = get_node("/root/game/ambient_music")
+	ambientmusic.play()
 
 func _process(delta): #all of this is for making the mouse change when m1 is up or down
 	if Input.is_action_pressed("leftclick") != mousedown:

@@ -11,3 +11,7 @@ func health_display_update() -> void:
 func _on_enemy_reached_end() -> void:
 	player_health -= 1
 	health_display_update()
+
+func _process(delta):
+	if player_health <= 0:
+		get_tree().change_scene_to_file("res://scenes/lose_menu.tscn")
