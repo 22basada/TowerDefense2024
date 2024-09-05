@@ -1,6 +1,6 @@
 extends Label
 
-var player_health = 200
+var player_health = 50
 var health = "Health:"
 func _process(delta: float) -> void:
 	set_text(str(health,player_health))
