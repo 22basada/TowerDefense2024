@@ -14,7 +14,6 @@ func _process(delta:float) -> void:
 		cash += freemoney
 		time = 0.0
 		cash_display_update()
-
 func cash_display_update() -> void:
 	set_text(dollarsign+str(cash))
 

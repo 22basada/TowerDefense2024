@@ -29,7 +29,7 @@ func _on_gui_input(event):
 				get_child(1).queue_free()
 				
 			var path = get_tree().get_root().get_node("game/AllTowers")
-			
+			var money = get_tree().get_root().get_node("game/MoneyUI/MoneyCounter")
 			path.add_child(tempTower)
 			tempTower.global_position = event.global_position
 			if money_ui:

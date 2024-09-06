@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxm5xnqattg0k"]
+[gd_scene load_steps=6 format=3 uid="uid://cxm5xnqattg0k"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_rnkb8"]
 [ext_resource type="FontFile" uid="uid://crxrcv03kdx5g" path="res://Tenada.ttf" id="2_6f8rx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxnp8"]
+content_margin_top = 64.0
+bg_color = Color(0.148438, 0.195313, 0.113281, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njlg2"]
+content_margin_top = 64.0
+bg_color = Color(0.188235, 0.243137, 0.145098, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y3ax"]
+content_margin_top = 64.0
+bg_color = Color(0.101961, 0.141176, 0.0745098, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
 
 [node name="start_menu" type="Control"]
 layout_mode = 3
@@ -15,25 +33,33 @@ script = ExtResource("1_rnkb8")
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_left = 118.0
-offset_top = 64.0
+offset_top = 19.0
 offset_right = 786.0
-offset_bottom = 730.0
+offset_bottom = 689.0
 scale = Vector2(0.999999, 0.999999)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 80
+theme_override_constants/separation = 40
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 theme_override_fonts/font = ExtResource("2_6f8rx")
 theme_override_font_sizes/font_size = 250
+theme_override_styles/normal = SubResource("StyleBoxFlat_gxnp8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_njlg2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6y3ax")
 text = "PLAY"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 theme_override_fonts/font = ExtResource("2_6f8rx")
 theme_override_font_sizes/font_size = 250
+theme_override_styles/normal = SubResource("StyleBoxFlat_gxnp8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_njlg2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6y3ax")
 text = "QUIT"
 
 [node name="ControlsInstructions" type="Label" parent="."]
@@ -51,7 +77,7 @@ TOWERS WITH
 MOUSE
 
 PRESS TAB TO
-CLOSE SHOP
+TOGGLE SHOP
 
 
 INSTRUCTIONS:
